@@ -1,0 +1,163 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="gr__getbootstrap_com">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="generator" content="Jekyll v3.8.5">
+<title>名もなき駄文置き場へ</title>
+    <!-- Bootstrap core CSS -->
+<link href="{% static 'css/bootstrap.min.css' %}"   rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+      .bd-placeholder-img {
+        font-size: 0.9rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+     </style>  
+     
+      
+<link href="{% static 'css/album.css' %}" rel="stylesheet">
+<link href="{% static 'css/social.css' %}" rel="stylesheet">
+
+
+{% block customcss %}
+{% endblock %}  
+
+
+</head>
+
+<body data-gr-c-s-loaded="true">
+
+
+<!--1．以下ナビ-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary text-light">
+  <a class="navbar-brand" href="/"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+<ul class="navbar-nav mr-auto">
+  <li class="nav-item">
+<a class="nav-link" href="http://127.0.0.1:8000/category/1">プログラミング</a>
+  </li>
+    <li class="nav-item">
+<a class="nav-link" href="http://127.0.0.1:8000/category/2">雑記</a>
+  </li>
+  <li class="nav-item">
+<a class="nav-link" href="http://127.0.0.1:8000/category/3">ミニマリスト生活</a>
+  </li>
+  <li class="nav-item">
+<a class="nav-link" href="http://127.0.0.1:8000/category/4">仕事・効率化</a>
+  </li>
+<li class="nav-item">
+<a class="nav-link" href="http://127.0.0.1:8000/category/5">音楽について</a>
+  </li>
+  <li class="nav-item">
+<a class="nav-link" href="http://127.0.0.1:8000/category/6">その他</a>
+  </li>
+    <li class="nav-item">
+<a class="nav-link" href="http://127.0.0.1:8000/stablepage/2">このブログについて</a>
+  </li>
+</ul>
+<span class="navbar-text">
+    {% if user.is_authenticated %}
+     <a href="{% url 'admin:index' %}" target=”_blank”>管理画面へ</a>
+    {% else %}
+     ようこそ
+    {% endif %}
+</span>
+  </div>
+</nav>
+<!--ナビＥＮＤ-->
+
+
+<!--コンテンツエリア-->
+
+
+<main role="main">
+    <!--２．以下見出しエリア-->
+    <section class="jumbotron text-center">
+    <div class="container">
+            <img src="/static/images/logo.png">
+            <form class="" method="GET" action="{% url 'blog:index' %}">
+            <div class="input-group">
+            <input type="text"  class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" name="keyword">
+            <div class="input-group-append">
+            <button class="btn btn-success"  type="submit">サイト内検索</button>
+            </div>
+            </div>
+            </form>
+            <br>
+            <!--ソーシャルボタン-->
+            <p>
+            <a href="https://twitter.com/nonamestreets" target="_blank"><img src="/static/images/twitter.png" width="50px"></a>
+            <a href="https://www.youtube.com/channel/UCK8QUG2ZkoZL2Erb022a2WQ" target="_blank"><img src="/static/images/youtube.png" width="50px"></a>
+            <img src="/static/images/facebook.png" width="50px">
+            <img src="/static/images/linkedin.png" width="50px">
+            <img src="/static/images/instagram.png" width="50px">
+            <img src="/static/images/rss.png" width="50px">
+            </p>
+    
+    </div>
+    </section>
+    <!--見出しエリアＥＮＤ-->  
+      
+    {% block album %}
+    {% endblock %}  
+    </div>
+</main>
+
+<!--３．以下フッター-->
+<p style="clear: both;"><hr></p>
+<div class="container" style="background:url('/static/images/footer.jpg');">
+  <div class="row">
+        <div class="col-md-4">
+        <li style="list-style: none;"><strong style="color:white;">Information</strong></li>
+        <li style="list-style: none;"><a class="nav-link" href="http://127.0.0.1:8000/stablepage/2" style="color:white;"><small>このブログについて</small></a></li>
+        <li style="list-style: none;"><a class="nav-link" href="http://127.0.0.1:8000/stablepage/3" style="color:white;"><small>免責事項について</small></a></li>
+        <li style="list-style: none;"><a class="nav-link" href="http://127.0.0.1:8000/stablepage/4" style="color:white;"><small>サイトマップ</small></a></li>
+        </div>
+        <div class="col-md-4">
+        <li style="list-style: none;"><strong style="color:white;">関連サイト・サービス</strong></li>
+        </div>        
+        <div class="col-md-4">
+        <li style="list-style: none;"><strong style="color:white;">Special Thanks</strong></li>
+        <li style="list-style: none;"><a class="nav-link" href="https://www.udemy.com/django-3app/" style="color:white;" target=”_blank”><small>Udemy 大橋 亮太さん</small></a></li>
+        <li style="list-style: none;"><a class="nav-link" href="https://www.udemy.com/pythondjango-a/" style="color:white;" target=”_blank”><small>Udemy 滝澤 成人さん</small></a></li>
+        <li style="list-style: none;"><a class="nav-link" href="https://www.udemy.com/course/python-beginner/" style="color:white;" target=”_blank”><small>Udemy 酒井 潤さん</small></a></li>
+        </div>
+  </div>
+</div>
+
+<footer class="text-muted">
+  <div class="container">
+            <p class="float-right">
+              <a href="/">Back to top</a>
+            </p>
+    <p>© 2019- NoNamePlace All Rights Reserved.</p>
+    <p><a href="/">Visit the homepage</a></p>
+  </div>
+</footer>
+
+ <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  
+
+
+</body>
+</html>

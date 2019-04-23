@@ -1,0 +1,55 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+  {% block customcss %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+  {% endblock %}
+
+{% block album %}
+
+
+  <div class="album py-5 bg-white">
+    <div class="container">
+    
+      <div class="item">
+      {% for post in post_list %} 
+      
+      
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+          
+<svg class="bd-placeholder-img card-img-top" width="100%" height="40" 
+xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" 
+focusable="false" role="img" aria-label="Placeholder: Thumbnail">
+<title>Placeholder</title>
+<rect width="100%" height="100%" fill="#DC143C"　></rect>
+<text x="50%" y="50%" fill="#eceeef" dy=".3em">{{post.title|linebreaksbr}}</text></svg>
+            
+            <img src={{post.images.url}} width="100%" height="340px">
+            <div class="card-body">
+              <p class="card-text">{{post.pre_text}}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                
+                
+<button type="button" class="btn btn-outline-success"><a href="{% url 'blog:detail' post.pk %}">続きを見る</a></button>
+            <table>
+             <td style="display:block;margin-right:15px;"><small class="text-muted"><a href="{% url 'blog:category' post.category.pk %}">{{post.category}}</a></small></td>
+            <td style="display:block; margin-right:15px;"><small class="text-muted">{{post.create_at}}</small></td>
+              </table>
+                            
+            </div>
+            </div>
+          </div>
+        </div>
+    
+        
+        {% endfor %}
+        </div>        
+  	          
+        </div>
+        
+        	  	 {% include 'blog/page.html' %} 
+		  </div>
+
+    
+ {% endblock %}  

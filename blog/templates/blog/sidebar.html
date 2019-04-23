@@ -1,0 +1,43 @@
+
+<div class="col-md-3" style="float:left;" > 
+<!--サイトバー設定-->        
+<ul class="list-group">
+<li class="list-group-item active">カテゴリ一覧</li>
+{% for category in category_list %}
+<li class="list-group-item"><a href="{% url 'blog:category' category.pk %}">{{category}}</a></li>
+{% endfor %}
+</ul>
+<br>
+<!--サイトバー設定END-->  
+<!--サイトバー設定-->        
+<ul class="list-group">
+<li class="list-group-item active">カテゴリ一覧</li>
+{% for category in category_list %}
+<li class="list-group-item"><a href="{% url 'blog:category' category.pk %}">{{category}}</a></li>
+{% endfor %}
+</ul>
+<br>
+<!--サイトバー設定END-->
+<!--サイトバー設定-->   
+{% autoescape off %}
+<div class="card-body">     
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-3833550542734165",
+          enable_page_level_ads: true
+     });
+</script>
+</div>
+{% endautoescape %}
+<!--サイトバー設定END-->
+
+<!--サイドバー追加は以下↓-->
+
+
+
+
+
+
+
+</div>
